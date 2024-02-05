@@ -97,3 +97,77 @@ void print_ncoin(int change_owed)
     }
     printf("%i\n", ncoin);
 }
+
+\\check validity of Mastercard, Visa, and Amex numbers
+#include <cs50.h>
+#include <stdio.h>
+
+int even_digit(long number);
+int digit_sum(int product);
+int all_digits(long number);
+
+int main(void)
+{
+    long number = get_long("Number: ");
+    int final_number = all_digits(number);
+    if (final_number % 10 == 0)
+    {
+        if ((number >= 340000000000000 & number <= 349999999999999) || (number >= 370000000000000 & number <= 379999999999999))
+        {
+            printf("AMEX\n");
+        }
+        else if (number >= 5100000000000000 & number <= 5599999999999999)
+        {
+            printf("MASTERCARD\n");
+        }
+        else if ((number >= 4000000000000 & number <= 4999999999999) || (number >= 4000000000000000 & number <= 4999999999999999))
+        {
+            printf("VISA\n");
+        }
+        else
+        {
+            printf("INVALID\n");
+        }
+    }
+    else
+    {
+        printf("INVALID\n");
+    }
+
+}
+
+int even_digit(long number)
+{
+    int sum = 0;
+    number /= 10;
+    while (number > 0)
+    {
+        int product = (number % 10) * 2;
+        sum += digit_sum(product);
+        number /= 100;
+    }
+    return sum;
+}
+
+int digit_sum(int product)
+{
+    int sum = 0;
+    while (product > 0)
+    {
+        sum += product % 10;
+        product /= 10;
+    }
+    return sum;
+}
+
+int all_digits(long number)
+{
+    int sum = even_digit(number);
+    while (number > 0)
+    {
+        int odd_digit = number % 10;
+        sum += odd_digit;
+        number /= 100;
+    }
+    return sum;
+}
