@@ -67,3 +67,76 @@ int point(string word)
     }
     return sum;
 }
+
+\\readability test
+#include <cs50.h>
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+
+int word_count(string text);
+int sentence_count(string text);
+int letter_count(string text);
+
+int main(void)
+{
+    string text = get_string("Text: ");
+    int number_of_words = word_count(text);
+    int number_of_sentences = sentence_count(text);
+    int number_of_letters = letter_count(text);
+    float avg_letters = (float)number_of_letters / (float)number_of_words * 100.0;
+    float avg_sentences = (float)number_of_sentences / (float)number_of_words * 100.0;
+    float grade = (0.0588 * avg_letters) - (0.296 * avg_sentences) - 15.8;
+    if(grade < 1.5)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if(grade >= 16.0)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        int final = round(grade);
+        printf("Grade %i\n", final);
+    }
+}
+
+int word_count(string text)
+{
+    int nwords = 1;
+    for(int i = 0, length = strlen(text); i < length; i++)
+    {
+        if (text[i] == ' ')
+        {
+            nwords++;
+        }
+    }
+    return nwords;
+}
+
+int sentence_count(string text)
+{
+    int nsentences = 0;
+    for(int i = 0, length = strlen(text); i < length; i++)
+    {
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+        {
+            nsentences++;
+        }
+    }
+    return nsentences;
+}
+
+int letter_count(string text)
+{
+    int nletters = 0;
+    for(int i = 0, length = strlen(text); i < length; i++)
+    {
+        if ((text[i] >= 'a' & text[i] <= 'z') || (text[i] >= 'A' & text[i] <= 'Z'))
+        {
+            nletters++;
+        }
+    }
+    return nletters;
+}
