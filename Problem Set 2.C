@@ -140,3 +140,52 @@ int letter_count(string text)
     }
     return nletters;
 }
+
+\\text encryptor
+#include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+string encrypt(int key, string plain_text);
+
+int main(int argc, string argv[])
+{
+
+    if (argc != 2)
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+    int key = atoi(argv[1]);
+    if (key == 0)
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+    else
+    {
+        string plain_text = get_string("plaintext: ");
+        string cipher_text = encrypt(key, plain_text);
+        printf("ciphertext: %s\n", cipher_text);
+    }
+    return 0;
+}
+
+
+string encrypt(int key, string plain_text)
+{
+    for (int i = 0, length = strlen(plain_text); i < length; i++)
+    {
+        if ((plain_text[i] >= 'a' && plain_text[i] <= 'z') || (plain_text[i] >= 'A' && plain_text[i] <= 'Z'))
+        {
+            plain_text[i] += (key % 26);
+        }
+        else
+        {
+            return plain_text;
+        }
+    }
+    return plain_text;
+}
