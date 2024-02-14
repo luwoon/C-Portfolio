@@ -141,7 +141,7 @@ int letter_count(string text)
     return nletters;
 }
 
-\\text encryptor
+\\text encryptor using specified integer key
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -188,4 +188,60 @@ string encrypt(int key, string plain_text)
         }
     }
     return plain_text;
+}
+
+\\text encryptor using specified 26-character key
+#include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+string encrypt(string key, string plain_text);
+
+int main(int argc, string argv[])
+{
+
+    if (argc != 2)
+    {
+        printf("Usage: ./substitution key\n");
+        return 1;
+    }
+    string key = argv[1];
+    if (strlen(key) != 26)
+    {
+        printf("Usage: ./substitution key\n");
+        return 1;
+    }
+    else
+    {
+        string plain_text = get_string("plaintext: ");
+        string cipher_text = encrypt(key, plain_text);
+        printf("ciphertext: %s\n", cipher_text);
+    }
+    return 0;
+}
+
+string encrypt(string key, string plain_text)
+{
+    string cipher_text = plain_text;
+    for (int i = 0, length = strlen(plain_text); i < length; i++)
+    {
+        char current_char = plain_text[i];
+        if (islower(current_char))
+        {
+            int plain_text_pos = current_char - 'a';
+            cipher_text[i] = tolower(key[plain_text_pos]);
+        }
+        else if (isupper(current_char))
+        {
+            int plain_text_pos = current_char - 'A';
+            cipher_text[i] = toupper(key[plain_text_pos]);
+        }
+        else
+        {
+            cipher_text[i] = current_char;
+        }
+    }
+    return cipher_text;
 }
