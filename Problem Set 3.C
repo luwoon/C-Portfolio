@@ -1,4 +1,4 @@
-\\plurality election programme
+\\ Plurality election programme
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -99,7 +99,8 @@ void print_winner(void)
     return;
 }
 
-\\instant runoff voting system
+
+\\ Instant runoff voting system
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
