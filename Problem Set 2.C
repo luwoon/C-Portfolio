@@ -1,4 +1,5 @@
 // Scrabble game
+
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -69,6 +70,7 @@ int point(string word)
 }
 
 \\ Readability test
+
 #include <cs50.h>
 #include <math.h>
 #include <stdio.h>
@@ -142,6 +144,7 @@ int letter_count(string text)
 }
 
 \\ Text encryptor using specified integer key
+
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -191,6 +194,7 @@ string encrypt(int key, string plain_text)
 }
 
 \\ Text encryptor using specified 26-character key
+
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
