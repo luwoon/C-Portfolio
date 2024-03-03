@@ -1,4 +1,4 @@
-//print "hello, world"
+// Print "hello, world"
 #include <cs50.h>
 #include <stdio.h>
 
@@ -7,7 +7,7 @@ int main(void)
     printf("hello, world\n");
 }
 
-//print "hello, <name>"
+// Print "hello, <name>"
 #include <cs50.h>
 #include <stdio.h>
 
@@ -17,7 +17,7 @@ int main(void)
     printf("hello, %s\n", name);
 }
 
-//recreate Nintendo’s Super Mario Brothers's pyramid using hashes (#), allowing users to state height of pyramid
+// Recreate Nintendo’s Super Mario Brothers's pyramid using hashes (#), allowing users to state height of pyramid
 #include <stdio.h>
 #include <cs50.h>
 
@@ -55,7 +55,7 @@ void print_row(int length, int height)
     printf("\n");
 }
 
-//return minimum number of coins (25, 10, 5, or 1 cent-coins) to make up stated amount of change in cents
+// Return minimum number of coins (25, 10, 5, or 1 cent-coins) to make up stated amount of change in cents
 #include <cs50.h>
 #include <stdio.h>
 
@@ -98,7 +98,7 @@ void print_ncoin(int change_owed)
     printf("%i\n", ncoin);
 }
 
-\\check validity of Mastercard, Visa, and Amex numbers
+\\ Check validity of Mastercard, Visa, and Amex numbers
 #include <cs50.h>
 #include <stdio.h>
 
