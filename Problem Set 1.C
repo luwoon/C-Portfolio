@@ -102,7 +102,7 @@ void print_ncoin(int change_owed)
     printf("%i\n", ncoin);
 }
 
-\\ Check validity of Mastercard, Visa, and Amex numbers
+// Check validity of Mastercard, Visa, and Amex numbers
 
 #include <cs50.h>
 #include <stdio.h>
