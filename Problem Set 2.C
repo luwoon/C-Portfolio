@@ -69,7 +69,7 @@ int point(string word)
     return sum;
 }
 
-\\ Readability test
+\\ Readability test based on Coleman-Liau index 
 
 #include <cs50.h>
 #include <math.h>
