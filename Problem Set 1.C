@@ -8,6 +8,7 @@ int main(void)
     printf("hello, world\n");
 }
 
+
 // Print "hello, <name>"
 
 #include <cs50.h>
@@ -18,6 +19,7 @@ int main(void)
     string name = get_string("What's your name? ");
     printf("hello, %s\n", name);
 }
+
 
 // Recreate Nintendo’s Super Mario Brothers's pyramid using hashes (#), allowing users to state height of pyramid
 
@@ -57,6 +59,7 @@ void print_row(int length, int height)
     }
     printf("\n");
 }
+
 
 // Return minimum number of coins (25, 10, 5, or 1 cent-coins) to make up stated amount of change in cents
 
@@ -101,6 +104,7 @@ void print_ncoin(int change_owed)
     }
     printf("%i\n", ncoin);
 }
+
 
 // Check validity of Mastercard, Visa, and Amex numbers
 
