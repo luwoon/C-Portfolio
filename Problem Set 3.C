@@ -101,7 +101,7 @@ void print_winner(void)
 }
 
 
-\\ Instant runoff voting system
+// Instant runoff voting system
 
 #include <cs50.h>
 #include <stdio.h>
