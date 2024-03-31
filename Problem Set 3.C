@@ -1,4 +1,4 @@
-\\ Plurality election programme
+// Plurality election programme
 
 #include <cs50.h>
 #include <stdio.h>
