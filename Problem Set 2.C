@@ -69,6 +69,7 @@ int point(string word)
     return sum;
 }
 
+
 \\ Readability test based on Coleman-Liau index 
 
 #include <cs50.h>
@@ -143,6 +144,7 @@ int letter_count(string text)
     return nletters;
 }
 
+
 \\ Text encryptor using specified integer key
 
 #include <cs50.h>
@@ -192,6 +194,7 @@ string encrypt(int key, string plain_text)
     }
     return plain_text;
 }
+
 
 \\ Text encryptor using specified 26-character key
 
