@@ -1,1 +1,3 @@
-This repository contains samples of C programmes I created in Harvard University's CS50 course 'Introduction to Computer Science'.
+# C Portfolio
+
+This repository contains samples of C programmes I created during my self-studying of Harvard University's CS50 'Introduction to Computer Science' course.
